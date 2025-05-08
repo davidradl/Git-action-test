@@ -25,10 +25,7 @@ permissions:
   pull-requests: write
   actions: write
 jobs:
-  PR-auto-lable:
+  PR-auto-label:
     runs-on: ubuntu-latest
     steps:
     - run: gh pr edit $PR --add-label "David123"
-    env:
-    GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    ISSUE: ${{ github.event.issue.html_url }}
