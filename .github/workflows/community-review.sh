@@ -20,4 +20,8 @@ set -e
 echo "Community rev Script running!"
 echo ${GITHUB_REF_NAME}
 env
-echo "Community rev Script ran!"
+
+#if ( ${github.event.review.state} == 'approved' ) {
+#    // set label on PR
+#}
+

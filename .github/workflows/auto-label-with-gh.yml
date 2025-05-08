@@ -16,28 +16,19 @@
 # under the License.
 #
 ---
-name: "Community Review"
-description: "Manages community labels"
-
+name: "PR label GH"
+description: "Label PR on push GH"
 on:
-  #pull_request_review:
-  push:
+  pull_request:
 permissions:
   issues: write
   pull-requests: write
   actions: write
-
 jobs:
-  Update-community-review-labels:
+  PR-auto-lable:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-      - name: Check out repository code
-        uses: actions/checkout@v4
-      #- run: echo github.event.review.state
-      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-      - name: Make the script executable
-        run: chmod +x ${{ github.workspace }}/.github/workflows/community-review.sh
-      - run: bash ${{ github.workspace }}/.github/workflows/community-review.sh
-      - run: echo "🍏 This job's status is ${{ job.status }}."
-
+    - run: gh pr edit $PR --add-label "David123"
+    env:
+    GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    ISSUE: ${{ github.event.issue.html_url }}
