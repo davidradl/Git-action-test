@@ -18,18 +18,18 @@
 -name: "PR Approval"
 
 on:
-  pull_request: 
+  pull_request:
 jobs:
-build:
-name: Auto-approve
-runs-on: ubuntu-latest
-steps:
-  - uses: actions/github-script@v4
-with:
-script: |
-  const result = await github.pulls.createReview({
-     owner: context.repo.owner,
-     repo: context.repo.repo,
-     pull_number: context.issue.number,
-     event: "APPROVE"})
-     console.log(result.status)
+  PR-auto-approve:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+      - uses: actions/github-script@v4
+        with:
+            script: |
+                 const result = await github.pulls.createReview({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    pull_number: context.issue.number,
+                    event: "APPROVE"})
+                    console.log(result.status)
