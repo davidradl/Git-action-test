@@ -16,8 +16,9 @@
 # under the License.
 #
 -name: "PR Approval"
--on:
-    pull_request:
+
+on:
+  pull_request: 
 jobs:
 build:
 name: Auto-approve
