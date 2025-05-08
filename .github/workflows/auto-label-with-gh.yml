@@ -29,3 +29,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - run: gh pr edit $PR --add-label "David123"
+    env:
+      PR_URL: ${{github.event.pull_request.html_url}}
+      GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
