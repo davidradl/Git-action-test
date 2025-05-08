@@ -20,16 +20,16 @@
 on:
   pull_request:
 jobs:
-  PR-auto-approve:
+  pull-request-approve:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-      - uses: actions/github-script@v4
+      - uses: actions/checkout@v4
+      - uses: ./
         with:
-            script: |
-                 const result = await github.pulls.createReview({
-                    owner: context.repo.owner,
-                    repo: context.repo.repo,
-                    pull_number: context.issue.number,
-                    event: "APPROVE"})
-                    console.log(result.status)
+          script: |
+              const result = await github.pulls.createReview({
+                 owner: context.repo.owner,
+                 repo: context.repo.repo,
+                 pull_number: context.issue.number,
+                 event: "APPROVE"})
+                 console.log(result.status)
