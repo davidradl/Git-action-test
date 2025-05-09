@@ -19,7 +19,7 @@
 name: "PR label GH"
 description: "Label PR on push GH"
 on:
-  pull_request:
+  pull_request_review:
 permissions:
   issues: write
   pull-requests: write
@@ -28,13 +28,9 @@ jobs:
   PR-auto-label:
     runs-on: ubuntu-latest
     steps:
-    - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
-    - name: Check out repository code
-      uses: actions/checkout@v4
-    #- run: echo github.event.review.state
-    - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-    - run: gh pr edit $PR --add-label "David123"
-    env:
-      PR_URL: ${{github.event.pull_request.html_url}}
-      GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
-      BRANCH: ${{ github.head_ref }}
+      - run: gh issue edit "$NUMBER" --add-label "$LABELS"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_REPO: ${{ github.repository }}
+          NUMBER: ${{ github.event.issue.number }}
+          LABELS: David123
