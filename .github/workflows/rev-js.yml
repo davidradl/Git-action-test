@@ -38,13 +38,21 @@ jobs:
                console.log("Reviewer login:" + context.payload.review.user.login);
                if ( context.payload.review.state == 'approved') {
                    console.log("APPROVED!!!!");
+                   github.rest.issues.addLabels({
+                          issue_number: context.issue.number,
+                          owner: context.repo.owner,
+                          repo: context.repo.repo,
+                          labels: ['David123']
+                        });
                }
                if ( context.payload.review.state == 'changes_requested') {
                    console.log("Changes requested!!!!");
-               }
-               github.rest.issues.addLabels({
-                           issue_number: context.issue.number,
-                           owner: context.repo.owner,
-                           repo: context.repo.repo,
-                           labels: ['David123']
-                         })
+                   github.rest.issues.removeLabel({
+                         issue_number: issue_num,
+                         owner: context.repo.owner,
+                         repo: context.repo.repo,
+                         name: ['David123']
+                   });
+               } 
+               
+          
