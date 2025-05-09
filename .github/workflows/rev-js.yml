@@ -25,11 +25,11 @@ jobs:
   PR-auto-approve:
     runs-on: ubuntu-latest
     permissions: write-all
-    environment: mine
+    #environment: mine
     steps:
       - uses: actions/github-script@v5
         with:
-            github-token: ${{ secrets.MY_PAT }}
+            #github-token: ${{ secrets.MY_PAT }}
             script: |
                console.log("owner:" + context.issue.owner);
                console.log("PR number:" + context.issue.number);
