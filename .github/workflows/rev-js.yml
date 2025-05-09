@@ -41,3 +41,9 @@ jobs:
                if ( context.payload.review.state == 'changes_requested') {
                    console.log("Changes requested!!!!");
                }
+               github.rest.issues.addLabels({
+                           issue_number: context.issue.number,
+                           owner: context.repo.owner,
+                           repo: context.repo.repo,
+                           labels: ['David123']
+                         })
