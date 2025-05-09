@@ -25,6 +25,7 @@ jobs:
   PR-auto-approve:
     runs-on: ubuntu-latest
     permissions: write-all
+    environment: mine
     steps:
       - uses: actions/github-script@v7
         with:
