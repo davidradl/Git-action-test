@@ -20,10 +20,10 @@ name: "PR label GH"
 description: "Label PR on push GH"
 on:
   pull_request_review:
-  permissions: write-all
 jobs:
   PR-auto-label:
     runs-on: ubuntu-latest
+    permissions: write-all
     steps:
       - run: gh issue edit 7 --add-label "$LABELS"
         env:
