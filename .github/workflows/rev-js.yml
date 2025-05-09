@@ -34,11 +34,11 @@ jobs:
                  console.log(context);
                  console.log("end context")";
                  #console.log("User id is :" + context.base.user.id);
-                 console.log("context.review.state :" +context.review.state);
-                 console.log("number :" + context.number);
+                 #console.log("context.review.state :" +context.review.state);
+                 #console.log("number :" + context.number);
               
-                 if (context.review.state == 'approved') {
-                     console.log("Approved!");
-                 } else {
-                     console.log("Not Approved!");
-                 }
+                 #if (context.review.state == 'approved') {
+                 #      console.log("Approved!");
+                 # } else {
+                 #    console.log("Not Approved!");
+                 #  }
