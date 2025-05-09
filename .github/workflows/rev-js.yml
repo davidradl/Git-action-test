@@ -28,4 +28,4 @@ jobs:
       - uses: actions/github-script@v7
         with:
             script: |
-               console.log(context.base);
+               console.log(context.issue);
