@@ -38,6 +38,7 @@ jobs:
                console.log("Rev:" + context.payload.review.state);
                console.log("Reviewer id:" + context.payload.review.user.id);
                console.log("Reviewer login:" + context.payload.review.user.login);
+               console.log("user :" + context.repository);
                if ( context.payload.review.state == 'approved') {
                    console.log("APPROVED!!!!");
                    github.rest.issues.addLabels({
