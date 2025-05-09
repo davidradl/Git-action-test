@@ -33,7 +33,7 @@ jobs:
                //console.log("Reviewer:" + context.issue.number);
                //console.log("Payload:" + context.payload.pull_request.state);
                console.log("Rev:" + context.payload.review.state);
-               console.log("Reviewer:" + context.payload.review.user.id);
+               //console.log("Reviewer:" + context.payload.review.user.id);
                if ( context.payload.review.state == 'approved') {
                    console.log("APPROVED!!!!");
                }
