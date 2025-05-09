@@ -30,9 +30,9 @@ jobs:
             script: |
                  //console.log(context.payload.pull_request);
                  //console.log(context);
-                 console.log("User id is :" context.user.id);
-                 console.log("context.review.state :" context.review.state);
-                 console.log("number :" context.number);
+                 console.log("User id is :" + context.user.id);
+                 console.log("context.review.state :" +context.review.state);
+                 console.log("number :" + context.number);
               
                  if (context.review.state == 'approved') {
                      console.log("Approved!");
