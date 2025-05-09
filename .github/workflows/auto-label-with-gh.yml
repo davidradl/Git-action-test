@@ -37,3 +37,4 @@ jobs:
     env:
       PR_URL: ${{github.event.pull_request.html_url}}
       GH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+      BRANCH: ${{ github.head_ref }}
