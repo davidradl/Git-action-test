@@ -28,5 +28,8 @@ jobs:
       - uses: actions/github-script@v7
         with:
             script: |
-               console.log(context.issue.owner);
-               console.log(context.issue.number);
+               console.log("owner:" + context.issue.owner);
+               console.log("PR number:" + context.issue.number);
+               console.log("Reviewer:" + context.issue.number);
+               console.log("Payload:" + context.payload);
+              console.log("Base:" + context.base);
