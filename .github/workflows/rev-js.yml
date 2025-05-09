@@ -30,6 +30,6 @@ jobs:
             script: |
                console.log("owner:" + context.issue.owner);
                console.log("PR number:" + context.issue.number);
-               console.log("Reviewer:" + context.issue.number);
-               console.log("Payload:" + context.payload);
-              console.log("Base:" + context.base);
+               //console.log("Reviewer:" + context.issue.number);
+               //console.log("Payload:" + context.payload);
+               //console.log("Base:" + context.base);
