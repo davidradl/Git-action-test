@@ -20,7 +20,7 @@ name: "PR rev js"
 description: "PR rev js"
 
 on:
-  pull_request:
+  pull_request_review:
 jobs:
   PR-auto-approve:
     runs-on: ubuntu-latest
