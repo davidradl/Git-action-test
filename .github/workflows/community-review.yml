@@ -20,8 +20,7 @@ name: "Community Review"
 description: "Manages community labels"
 
 on:
-  #pull_request_review:
-  push:
+  pull_request_review:
 permissions:
   issues: write
   pull-requests: write
