@@ -34,5 +34,5 @@ jobs:
                //console.log("Payload:" + context.payload.pull_request.state);
                console.log("Rev:" + context.payload.review.state);
                if ( context.payload.review.state == 'approved') {
-                   console.log("APPROVED!!!!"(;
+                   console.log("APPROVED!!!!");
                }
