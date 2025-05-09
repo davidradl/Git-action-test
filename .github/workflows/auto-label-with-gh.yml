@@ -27,6 +27,8 @@ permissions:
 jobs:
   PR-auto-label:
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
     steps:
       - run: gh issue edit 7 --add-label "$LABELS"
         env:
