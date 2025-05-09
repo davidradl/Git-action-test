@@ -24,11 +24,7 @@ on:
 jobs:
   PR-auto-approve:
     runs-on: ubuntu-latest
-    permissions:
-      issues: write
-      pull-requests: write
-      actions: write
-      contents: write
+    permissions: write-all
     steps:
       - uses: actions/github-script@v7
         with:
