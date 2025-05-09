@@ -21,13 +21,13 @@ description: "PR rev js"
 
 on:
   pull_request_review:
-permissions:
-  issues: write
-  pull-requests: write
-  actions: write    
 jobs:
   PR-auto-approve:
     runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+      actions: write
     steps:
       - uses: actions/github-script@v7
         with:
