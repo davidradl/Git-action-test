@@ -32,5 +32,7 @@ jobs:
                console.log("PR number:" + context.issue.number);
                //console.log("Reviewer:" + context.issue.number);
                //console.log("Payload:" + context.payload.pull_request.state);
-               console.log("REv:" + context.payload.review.state);
-               //console.log("Base:" + context.base);
+               console.log("Rev:" + context.payload.review.state);
+               if ( context.payload.review.state == 'approved') {
+                   console.log("APPROVED!!!!"(;
+               }
