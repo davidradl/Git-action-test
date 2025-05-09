@@ -32,5 +32,5 @@ jobs:
                console.log("PR number:" + context.issue.number);
                //console.log("Reviewer:" + context.issue.number);
                console.log("Payload:" + context.payload.pull_request.state);
-               console.log("Payload:" + context.review.state);
+               console.log("REv:" + context.review);
                //console.log("Base:" + context.base);
