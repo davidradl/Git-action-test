@@ -22,6 +22,10 @@ env
 
 if  $github.event.review.state == 'approved'; then
    // set label on PR
+   echo "APProved"
    curl  -d '{"labels":["DavidApp"]}' -H "Content-Type:application/json; charset=utf-8" -H 'Authorization:Bearer $token'  -X POST  https://api.github.com/repos/davidradl/Git-action-test/issues/7/labels
 fi
+echo "boo"
+ curl  -d '{"labels":["DavidApp"]}' -H "Content-Type:application/json; charset=utf-8" -H 'Authorization:Bearer $token'  -X POST  https://api.github.com/repos/davidradl/Git-action-test/issues/7/labels
+
 
