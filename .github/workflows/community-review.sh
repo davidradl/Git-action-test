@@ -25,6 +25,7 @@ if   [[ $2 == 'approved' ]]; then
    $cmd
 fi
 echo "post APProved"
+echo "$1"
 curl  -d '{"labels":["DavidApp"]}' \
         -H 'Content-Type:application/json; charset=utf-8' \
         -H "Authorization:Bearer $1" \
