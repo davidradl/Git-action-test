@@ -40,7 +40,7 @@ jobs:
         run: chmod +x ${{ github.workspace }}/.github/workflows/community-review.sh
       - shell: bash
         env:
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.MY_PAT }}
           revstate: ${github.event.review.state}
         run: bash ${{ github.workspace }}/.github/workflows/community-review.sh "$token" "$revstate"
       - run: echo "🍏 This job's status is ${{ job.status }}."
