@@ -20,13 +20,13 @@ set -e
 echo "Community rev Script running!"
 env
 
-if   [[ ${github.event.review.state} == 'approved' ]]; then
-   // set label on PR
+if   [[ $2 == 'approved' ]]; then
    echo "APProved"
-   echo 'Authorization:Bearer $token'
-   curl  -d '{"labels":["DavidApp"]}' -H "Content-Type:application/json; charset=utf-8" -H 'Authorization:Bearer $1'  -X POST  https://api.github.com/repos/davidradl/Git-action-test/issues/7/labels
+   $cmd
 fi
 echo "post APProved"
-curl  -d '{"labels":["DavidApp"]}' -H "Content-Type:application/json; charset=utf-8" -H 'Authorization:Bearer $1'  -X POST  https://api.github.com/repos/davidradl/Git-action-test/issues/7/labels
-
-
+curl  -d '{"labels":["DavidApp"]}' \
+        -H 'Content-Type:application/json; charset=utf-8' \
+        -H "Authorization:Bearer $1" \
+        -X POST \
+         https://api.github.com/repos/davidradl/Git-action-test/issues/7/labels

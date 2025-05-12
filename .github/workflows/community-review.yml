@@ -40,6 +40,7 @@ jobs:
       - shell: bash
         env:
           token: ${{ secrets.GITHUB_TOKEN }}
-        run: bash ${{ github.workspace }}/.github/workflows/community-review.sh "$token"
+          revstate: ${github.event.review.state}
+        run: bash ${{ github.workspace }}/.github/workflows/community-review.sh "$token" "$revstate"
       - run: echo "🍏 This job's status is ${{ job.status }}."
 
