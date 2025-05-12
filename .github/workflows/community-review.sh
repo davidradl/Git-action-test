@@ -20,8 +20,8 @@ set -e
 echo "Community rev Script running!"
 env
 
-if ( $github.event.review.state == 'approved' ) {
-    // set label on PR
+if  $github.event.review.state == 'approved'; then
+   // set label on PR
    curl  -d '{"labels":["DavidApp"]}' -H "Content-Type:application/json; charset=utf-8" -H 'Authorization:Bearer $token'  -X POST  https://api.github.com/repos/davidradl/Git-action-test/issues/7/labels
-}
+fi
 
