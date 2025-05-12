@@ -25,7 +25,10 @@ if  $github.event.review.state == 'approved'; then
    echo "APProved"
    curl  -d '{"labels":["DavidApp"]}' -H "Content-Type:application/json; charset=utf-8" -H 'Authorization:Bearer $token'  -X POST  https://api.github.com/repos/davidradl/Git-action-test/issues/7/labels
 fi
-echo "boo"
+echo "token"
+echo $token
+echo secret
+echo ${{ secret.GITHUB_TOKEN }}
  curl  -d '{"labels":["DavidApp"]}' -H "Content-Type:application/json; charset=utf-8" -H 'Authorization:Bearer $token'  -X POST  https://api.github.com/repos/davidradl/Git-action-test/issues/7/labels
 
 
