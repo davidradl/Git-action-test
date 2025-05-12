@@ -24,7 +24,10 @@ on:
 jobs:
   PR-auto-approve:
     runs-on: ubuntu-latest
-    permissions: write-all
+    permissions:
+      issues: write
+      pull-requests: write
+      actions: write
     #environment: mine
     steps:
       - uses: actions/github-script@v5
