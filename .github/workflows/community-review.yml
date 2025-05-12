@@ -37,6 +37,8 @@ jobs:
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
       - name: Make the script executable
         run: chmod +x ${{ github.workspace }}/.github/workflows/community-review.sh
+        env:
+           token: ${{ secrets.GITHUB_TOKEN }}
       - run: bash ${{ github.workspace }}/.github/workflows/community-review.sh
       - run: echo "🍏 This job's status is ${{ job.status }}."
 

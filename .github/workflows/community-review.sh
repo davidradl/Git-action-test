@@ -18,13 +18,10 @@
 ################################################################################
 set -e
 echo "Community rev Script running!"
-echo "gh tok"
-echo ${secrets.GITHUB_TOKEN}
-echo ${GITHUB_REF_NAME}
 env
 
 if ( $github.event.review.state == 'approved' ) {
     // set label on PR
-   curl  -d '{"labels":["DavidApp"]}' -H "Content-Type:application/json; charset=utf-8" -H 'Authorization:Bearer ${secrets.GITHUB_TOKEN}'  -X POST  https://api.github.com/repos/davidradl/Git-action-test/issues/7/labels
+   curl  -d '{"labels":["DavidApp"]}' -H "Content-Type:application/json; charset=utf-8" -H 'Authorization:Bearer $token'  -X POST  https://api.github.com/repos/davidradl/Git-action-test/issues/7/labels
 }
 
