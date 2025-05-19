@@ -16,7 +16,7 @@
 # under the License.
 #
 ---
-name: "Community Review"
+name: "Community Review Target"
 description: "Manages community labels"
 
 on:
