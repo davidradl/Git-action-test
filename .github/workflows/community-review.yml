@@ -17,10 +17,9 @@
 #
 ---
 name: "Community Review Target"
-description: "Manages community labels"
+description: "Manages community labels target"
 
 on:
-  # pull_request_review runs as read only for PRs from forks - so cannot add the label
   pull_request_target:
 permissions:
   issues: write
@@ -32,7 +31,7 @@ jobs:
   Update-community-review-labels:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "$EVENT"
+      - run: echo "RUNNING Target $EVENT"
         env:
         EVENT: ${{toJSON(github)}}
 
