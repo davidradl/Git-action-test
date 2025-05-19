@@ -20,7 +20,8 @@ name: "Community Review"
 description: "Manages community labels"
 
 on:
-  pull_request_review:
+  # pull_request_review runs as read only for PRs from forks - so cannot add the label
+  pull_request_target:
 permissions:
   issues: write
   pull-requests: write
@@ -31,6 +32,9 @@ jobs:
   Update-community-review-labels:
     runs-on: ubuntu-latest
     steps:
+      - run: echo "$EVENT"
+        env:
+        EVENT: ${{toJSON(github)}}
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       - name: Check out repository code
         uses: actions/checkout@v4
@@ -40,8 +44,9 @@ jobs:
         run: chmod +x ${{ github.workspace }}/.github/workflows/community-review.sh
       - shell: bash
         env:
-          token: ${{ secrets.MY_PAT }}
+          token: ${{ secrets.GITHUB_TOKEN }}
           revstate: ${github.event.review.state}
-        run: bash ${{ github.workspace }}/.github/workflows/community-review.sh "$token" "$revstate"
+          prNumber: 1
+        run: bash ${{ github.workspace }}/.github/workflows/community-review.sh "$token" "$revstate" "$prNumber"
       - run: echo "🍏 This job's status is ${{ job.status }}."
 

@@ -16,6 +16,13 @@
 #  See the License for the specific language governing permissions and
 # limitations under the License.
 ################################################################################
+# $1 = token
+# $2 = review state
+# $3 = pr number
+# $4 = user doing the review
+# $5 = pr so we can find the other reviewers
+
+
 set -e
 echo "Community rev Script running!"
 env
@@ -26,8 +33,18 @@ if   [[ $2 == 'approved' ]]; then
 fi
 echo "post APProved"
 echo "$1"
-curl  -d '{"labels":["DavidApp"]}' \
-        -H 'Content-Type:application/json; charset=utf-8' \
-        -H "Authorization:Bearer $1" \
-        -X POST \
-         https://api.github.com/repos/davidradl/Git-action-test/issues/7/labels
+echo "Hard code shalini"
+cmd1 = curl -H "Content-Type:application/json; charset=utf-8" \
+    -H "Authorization:Bearer $1"
+     "https://github.ibm.com/api/v3/repos/event-integration/david-github-action-test/collaborators/shalini-m20/permission"
+echo $cmd1
+echo "use token for user $4"
+cmd2 = curl -H "Content-Type:application/json; charset=utf-8" \
+    -H "Authorization:Bearer $1"
+     "https://github.ibm.com/api/v3/repos/event-integration/david-github-action-test/collaborators/$4/permission"
+
+#curl  -d '{"labels":["DavidApp"]}' \
+#        -H 'Content-Type:application/json; charset=utf-8' \
+#        -H "Authorization:Bearer $1" \
+#        -X POST \
+#         https://api.github.com/repos/davidradl/Git-action-test/issues/$3/labels
