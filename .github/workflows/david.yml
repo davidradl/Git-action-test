@@ -19,7 +19,6 @@
 name: David
 on:
   pull_request_target: # Use pull_request_target
-    branches: [main]
 jobs:
   test:
     runs-on: ubuntu-latest
