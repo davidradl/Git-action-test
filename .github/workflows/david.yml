@@ -34,11 +34,10 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v4
       - name: Get PR number
-        run: echo ${{ github.event.issue.number }}
-      - shell: bash
-        env:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          revstate: ${github.event.review.state}
-          prNumber: ${{ github.event.issue.number }}
-        run: echo "PR number is  $prNumber"
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+          script: |
+            console.log("PR number:" + context.issue.number);
 
+           
