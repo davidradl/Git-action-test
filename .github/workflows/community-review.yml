@@ -42,7 +42,7 @@ jobs:
         env:
           token: ${{ secrets.GITHUB_TOKEN }}
           revstate: ${github.event.review.state}
-          prNumber:  ${{ github.event.issue.number }}
+          prNumber:  ${{ github.event.pull_request.number }}
         run: bash ${{ github.workspace }}/.github/workflows/community-review.sh "$token" "$revstate" "$prNumber"
       - run: echo "🍏 This job's status is ${{ job.status }}."
 
