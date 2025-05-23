@@ -39,6 +39,5 @@ jobs:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             console.log("PR number:" + context.issue.number);
-            echo  context.issue.number >> "$PR_NUMBER"
-      - run:  echo "1  $PR_NUMBER"
+
 
