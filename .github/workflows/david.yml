@@ -31,6 +31,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
+      - run: echo "github var ${{ github.event.pull_request.number }}"
       - name: Check out repository code
         uses: actions/checkout@v4
       - name: echo {{ env }}
