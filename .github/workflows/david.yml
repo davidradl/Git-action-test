@@ -16,9 +16,16 @@
 # under the License.
 #
 ---
-name: David
+name: "David"
+description: "Manages community labels"
+
 on:
-  pull_request: 
+  pull_request_review:
+permissions:
+  issues: write
+  pull-requests: write
+  actions: write
+  contents: write
 jobs:
   test:
     runs-on: ubuntu-latest
