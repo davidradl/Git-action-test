@@ -33,11 +33,9 @@ jobs:
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       - name: Check out repository code
         uses: actions/checkout@v4
-      - name: Get PR number
+      - name: echo {{ env }}
         uses: actions/github-script@v7
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
             console.log("PR number:" + context.issue.number);
-
-           
