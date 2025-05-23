@@ -29,7 +29,11 @@ jobs:
       - run: echo "🔎 The name of your branch is ${{ github.ref }} and your repository is ${{ github.repository }}."
       - name: Check out repository code
         uses: actions/checkout@v4
-      - run: echo "Event $EVENT"
-        env:
-        EVENT: ${{toJSON(github)}}
-      
+
+      - uses: actions/cache@v4
+        with:
+          path: ~/.cache/custom
+          key: cache-david-key
+      #- run: echo github.event.review.state
+      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
+
