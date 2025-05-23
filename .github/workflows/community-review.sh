@@ -33,6 +33,7 @@ if   [[ $2 == 'approved' ]]; then
 fi
 echo "post APProved"
 echo "$1"
+echo "Shell pr $3"
 echo "Hard code shalini"
 cmd1 = curl -H "Content-Type:application/json; charset=utf-8" \
     -H "Authorization:Bearer $1"
