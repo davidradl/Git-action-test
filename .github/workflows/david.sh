@@ -27,12 +27,16 @@ set -e
 echo "David.sh script running!"
 env
 echo "Script $1"
-echo "A"
 mkdir ".cache"
 mkdir ".cache/prnumbers/"
-echo "B"
 chmod 777 ".cache/prnumbers/"
-echo "C"
 echo "$1" > ".cache/prnumbers/bob"
 ls ".cache/prnumbers"
+cat ".cache/prnumbers/bob"
+echo "$1" > ".cache/prnumbers/$1"
+ls ".cache/prnumbers"
+echo "look into file $1"
+cat ".cache/prnumbers/$1"
+
+
 
