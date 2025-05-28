@@ -34,5 +34,5 @@ echo "B"
 chmod 777 ".cache/prnumbers/"
 echo "C"
 echo "$1" > ".cache/prnumbers/bob"
-ls .cache/prnumbers/
+ls ".cache/prnumbers"
 
