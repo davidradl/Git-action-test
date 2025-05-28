@@ -25,7 +25,7 @@
 
 set -e
 echo "David.sh script running!"
-env
+current_time_seconds=$(date +"%s")
 echo "Script $1"
 mkdir ".cache"
 mkdir ".cache/prnumbers/"
@@ -33,10 +33,10 @@ chmod 777 ".cache/prnumbers/"
 echo "$1" > ".cache/prnumbers/bob"
 ls ".cache/prnumbers"
 cat ".cache/prnumbers/bob"
-echo "$1" > ".cache/prnumbers/$1"
+echo "$1" > ".cache/prnumbers/$1-$current_time_seconds"
 ls ".cache/prnumbers"
-echo "look into file $1"
-cat ".cache/prnumbers/$1"
+echo "look into file $1-$current_time_seconds"
+cat ".cache/prnumbers/$1-$current_time_seconds"
 
 
 
