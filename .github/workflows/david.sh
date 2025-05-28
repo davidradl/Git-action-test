@@ -27,4 +27,5 @@ set -e
 echo "David.sh script running!"
 env
 echo "Script $1"
+echo "token $2"
 
