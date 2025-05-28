@@ -16,8 +16,8 @@
 # under the License.
 #
 ---
-name: "David download test4"
-description: "David download4"
+name: "David download test6"
+description: "David download5"
 
 on:
   schedule:
@@ -35,6 +35,5 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           name: "prNumbers"
-          path: .cache/prnumbers/
-      - run: ls -R .cache/prnumbers/
+      - run: ls -R
 
