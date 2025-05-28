@@ -36,6 +36,7 @@ jobs:
         uses: actions/checkout@v4
       - run: mkdir -p path/to/artifact
       - run: echo hello > path/to/artifact/world.txt
+      - run: cat path/to/artifact/world.txt
       - shell: bash
         env:
           prNumber: ${{ github.event.pull_request.number }}
