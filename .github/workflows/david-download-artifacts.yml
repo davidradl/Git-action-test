@@ -16,8 +16,8 @@
 # under the License.
 #
 ---
-name: "David download test2"
-description: "David download2"
+name: "David download test3"
+description: "David download3"
 
 on:
   schedule:
@@ -33,6 +33,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/download-artifact@v4
+      with:
+        name: "prNumbers"
+        path: .cache/prnumbers/
     - name: Display structure of downloaded files
-      run: ls -R
+    run: ls -R .cache/prnumbers/
 
