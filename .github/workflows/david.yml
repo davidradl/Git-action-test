@@ -35,3 +35,13 @@ jobs:
       - run: echo "github var pr ${{ github.event.pull_request }}"
       - name: Check out repository code
         uses: actions/checkout@v4
+      - run: mkdir -p .cache/prnumbers
+      - run: echo Hello > "$prNumber"
+        env:
+          prNumber: ${{ github.event.pull_request.number }}
+      - uses: actions/upload-artifact@v4
+        with:
+              name: "PR-$prNumber"
+              path: .cache/prnumbers/aaa
+        env:
+          prNumber: ${{ github.event.pull_request.number }}
