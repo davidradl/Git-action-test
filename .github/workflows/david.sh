@@ -24,7 +24,7 @@
 
 
 set -e
-echo "David.sh script running!"
+echo "David.sh script running creating file for PR review!"
 current_time_seconds=$(date +"%s")
 current_time_milliseconds=$(( $(date '+%s%N') / 1000000));
 echo "seconds $current_time_seconds"
@@ -33,13 +33,15 @@ echo "Script $1"
 mkdir ".cache"
 mkdir ".cache/prnumbers/"
 chmod 777 ".cache/prnumbers/"
-echo "$1" > ".cache/prnumbers/bob"
-ls ".cache/prnumbers"
-cat ".cache/prnumbers/bob"
 echo "$1" > ".cache/prnumbers/$1-$current_time_milliseconds"
 ls ".cache/prnumbers"
 echo "look into file millis $1-$current_time_milliseconds"
 cat ".cache/prnumbers/$1-$current_time_milliseconds"
 
+# test data
+echo "99" > ".cache/prnumbers/99-$current_time_milliseconds"
+ls ".cache/prnumbers"
+echo "look into file millis 99-$current_time_milliseconds"
+cat ".cache/prnumbers/99-$current_time_milliseconds"
 
 
