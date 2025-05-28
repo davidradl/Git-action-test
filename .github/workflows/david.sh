@@ -27,5 +27,8 @@ set -e
 echo "David.sh script running!"
 env
 echo "Script $1"
-echo "token $2"
+mkdir .cache/prnumbers/
+chmod 777 .cache/prnumbers/
+echo "$1" >$1
+ls .cache/prnumbers/
 
