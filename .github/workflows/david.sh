@@ -28,6 +28,7 @@ echo "David.sh script running!"
 env
 echo "Script $1"
 echo "A"
+mkdir ".cache"
 mkdir ".cache/prnumbers/"
 echo "B"
 chmod 777 ".cache/prnumbers/"
