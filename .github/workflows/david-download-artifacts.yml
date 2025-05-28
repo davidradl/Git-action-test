@@ -21,7 +21,7 @@ description: "David download"
 
 on:
   schedule:
-    - cron "* * * *"
+    - cron: '* * * * *'
 
 permissions:
   issues: write
