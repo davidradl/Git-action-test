@@ -32,10 +32,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-        - uses: actions/download-artifact@v4
-          with:
-            path: .cache/prnumbers
-            merge-multiple: true
-        - name: Display structure of downloaded files
-          run: ls -R ".cache/prnumbers"
+    - uses: actions/download-artifact@v4
+    - name: Display structure of downloaded files
+      run: ls -R
 
