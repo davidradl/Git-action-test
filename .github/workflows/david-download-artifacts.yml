@@ -16,8 +16,8 @@
 # under the License.
 #
 ---
-name: "David download test"
-description: "David download"
+name: "David download test2"
+description: "David download2"
 
 on:
   schedule:
