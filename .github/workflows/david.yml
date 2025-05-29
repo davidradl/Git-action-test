@@ -48,3 +48,9 @@ jobs:
               path: .cache/prnumbers/
         env:
           prNumber: ${{ github.event.pull_request.number }}
+      - name: Cache it
+        id: cache-it
+        uses: actions/cache@v4
+        with:
+          path: .cache/prnumbers/
+          key: pr_numbers_cache

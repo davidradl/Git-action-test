@@ -16,8 +16,8 @@
 # under the License.
 #
 ---
-name: "David download test10"
-description: "David download10"
+name: "David cache cron"
+description: "David cache cron"
 
 on:
   schedule:
@@ -33,9 +33,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/download-artifact@v4
+      - name: Restore cached PR numbers
+        id: cache-primes-restore
+        uses: actions/cache/restore@v4
         with:
-          name: "prNumbers"
-      - run: pwd
-      - run: ls
+           path: .cache/prnumbers/
+           key: pr_numbers_cache
+      - shell: bash
+        env:
+          token: ${{ secrets.GITHUB_TOKEN }}
+        run: bash ${{ github.workspace }}/.github/workflows/david-cache-cron.sh       
 
