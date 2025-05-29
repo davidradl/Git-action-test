@@ -58,11 +58,11 @@ jobs:
           path: .cache/prnumbers/
           key: pr_numbers_cache
       - run: rm -R .cache
-      - run: ls .cache
+      - run: ls
       - name: Restore cached PR numbers
         id: cache-primes-restore
         uses: actions/cache/restore@v4
         with:
           path: .cache/prnumbers/
           key: pr_numbers_cache
-      - run: ls 
+      - run: ls .cache/prnumbers/
