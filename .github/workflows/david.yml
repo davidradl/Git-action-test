@@ -41,7 +41,7 @@ jobs:
         env:
           prNumber: ${{ github.event.pull_request.number }}
           token: ${{ secrets.GITHUB_TOKEN }}
-        run: bash ${{ github.workspace }}/.github/workflows/david.sh "$prNumber" "$gitworkspace"
+        run: bash ${{ github.workspace }}/.github/workflows/david.sh "$prNumber" "$gitworkspace"  $gitworkspace
       - uses: actions/upload-artifact@v4
         with:
               name: "prNumbers"

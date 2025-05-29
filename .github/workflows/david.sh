@@ -28,7 +28,9 @@ echo "seconds $current_time_seconds"
 echo "millis $current_time_milliseconds"
 echo "Pr number $1"
 echo "gitworkspace $2"
-cd $2
+echo "gitworkspace2 $3"
+echo "pwd"
+pwd
 mkdir ".cache"
 mkdir ".cache/prnumbers/"
 chmod 777 ".cache/prnumbers/"
@@ -42,5 +44,6 @@ echo "99" > ".cache/prnumbers/99-$current_time_milliseconds"
 ls ".cache/prnumbers"
 echo "look into file millis 99-$current_time_milliseconds"
 cat ".cache/prnumbers/99-$current_time_milliseconds"
+pwd
 
 
