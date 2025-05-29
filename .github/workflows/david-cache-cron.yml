@@ -42,5 +42,6 @@ jobs:
       - shell: bash
         env:
           token: ${{ secrets.GITHUB_TOKEN }}
-        run: bash ${{ github.workspace }}/.github/workflows/david-cache-cron.sh       
+          cacheLocation: ${{ github.workspace }}/.cache/prnumbers
+        run: bash ${{ github.workspace }}/.github/workflows/david-cache-cron.sh $cacheLocation
 
