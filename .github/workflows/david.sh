@@ -28,7 +28,6 @@ echo "seconds $current_time_seconds"
 echo "millis $current_time_milliseconds"
 echo "Pr number $1"
 echo "gitworkspace $2"
-echo "gitworkspace2 $3"
 echo "pwd"
 pwd
 mkdir ".cache"
