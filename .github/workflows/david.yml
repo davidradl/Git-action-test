@@ -57,3 +57,10 @@ jobs:
         with:
           path: .cache/prnumbers/
           key: pr_numbers_cache
+      - name: Restore cached PR numbers
+        id: cache-primes-restore
+        uses: actions/cache/restore@v4
+        with:
+          path: .cache2/prnumbers/
+          key: pr_numbers_cache
+      - run: ls .cache2/prnumbers/
