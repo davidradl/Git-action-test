@@ -50,7 +50,7 @@ jobs:
           prNumber: ${{ github.event.pull_request.number }}
           gitworkspace: ${{ github.workspace }}
       - run: pwd
-      - run "ls .cache/prnumbers/"
+      - run: bash ls .cache/prnumbers/
       - name: Cache it
         id: cache-it
         uses: actions/cache@v4
