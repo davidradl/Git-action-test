@@ -34,18 +34,18 @@ fi
 echo "post APProved"
 echo "$1"
 echo "Shell pr $3"
-echo "Hard code shalini"
-cmd1 = curl -H "Content-Type:application/json; charset=utf-8" \
-    -H "Authorization:Bearer $1"
-     "https://github.ibm.com/api/v3/repos/event-integration/david-github-action-test/collaborators/shalini-m20/permission"
-echo $cmd1
-echo "use token for user $4"
-cmd2 = curl -H "Content-Type:application/json; charset=utf-8" \
-    -H "Authorization:Bearer $1"
-     "https://github.ibm.com/api/v3/repos/event-integration/david-github-action-test/collaborators/$4/permission"
+#echo "Hard code shalini"
+#cmd1 = curl -H "Content-Type:application/json; charset=utf-8" \
+#    -H "Authorization:Bearer $1"
+#     "https://github.ibm.com/api/v3/repos/event-integration/david-github-action-test/collaborators/shalini-m20/permission"
+#echo $cmd1
+#echo "use token for user $4"
+#cmd2 = curl -H "Content-Type:application/json; charset=utf-8" \
+#    -H "Authorization:Bearer $1"
+#     "https://github.ibm.com/api/v3/repos/event-integration/david-github-action-test/collaborators/$4/permission"
 
-#curl  -d '{"labels":["DavidApp"]}' \
-#        -H 'Content-Type:application/json; charset=utf-8' \
-#        -H "Authorization:Bearer $1" \
-#        -X POST \
-#         https://api.github.com/repos/davidradl/Git-action-test/issues/$3/labels
+curl  -d '{"labels":["DavidApp"]}' \
+        -H 'Content-Type:application/json; charset=utf-8' \
+        -H "Authorization:Bearer $1" \
+        -X POST \
+         https://api.github.com/repos/davidradl/Git-action-test/issues/$3/labels
