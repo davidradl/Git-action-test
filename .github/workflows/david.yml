@@ -56,4 +56,6 @@ jobs:
         uses: actions/cache@v4
         with:
           path: .cache/prnumbers/
-          key: pr_numbers_cache
+          key: pr_numbers_cache-${{ runner.os }}-${{ github.run_id }} 
+          restore-keys: pr_numbers_cache
+
