@@ -34,7 +34,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Restore cached PR numbers
-        id: cache-primes-restore
+        id: cache-pr-numbers-restore
         uses: actions/cache/restore@v4
         with:
            path: .cache/prnumbers/
